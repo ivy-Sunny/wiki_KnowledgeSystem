@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.otg/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ivy.wiki.mapper.EbookMapper">
+    <select id="findEbook" resultType="Ebook">
+        SELECT * FROM ebook
+        <where>
+            <if test="id != null || id != ''">
+                AND id = #{id}
+            </if>
+            <if test="name != null || name != ''">
+                AND id = #{name}
+            </if>
+            <if test="category1Id != null || category1Id != ''">
+                AND category1_id = #{category1Id}
+            </if>
+            <if test="category2Id != null || category2Id != ''">
+                AND category2_id = #{category2Id}
+            </if>
+        </where>
+    </select>
+    <select id="findAll" resultType="Ebook">
+        SELECT * FROM ebook
+        <where>
+            <choose>
+                <when test="name != null and name != ''">
+                    name LIKE CONCAT('%', #{name} ,'%')
+                </when>
+            </choose>
+        </where>
+    </select>
+</mapper>
