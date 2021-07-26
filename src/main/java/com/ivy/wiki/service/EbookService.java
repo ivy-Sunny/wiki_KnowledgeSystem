@@ -39,4 +39,5 @@ public interface EbookService {
      */
     public ResultVo updateEbook(Ebook ebook);
 
+    public ResultVo findEbookByCategory(String categoryId);
 }

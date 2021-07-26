@@ -25,6 +25,10 @@ public class EbookController {
         return ebookService.findAll(name, page, size);
     }
 
+    @GetMapping(value = "/listByCategory")
+    public ResultVo listByCategory(String categoryId){
+        return ebookService.findEbookByCategory(categoryId);
+    }
     @PostMapping("/add")
     public ResultVo add(@RequestBody Ebook ebook) {
         return ebookService.addEbook(ebook);

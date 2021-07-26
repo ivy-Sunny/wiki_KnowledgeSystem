@@ -7,6 +7,7 @@ package com.ivy.wiki.util;
  * @Author: ivy
  * @CreateTime: 2021-07-26
  */
+
 public class SnowFlake {
     /**
      * 起始的时间戳，2021-01-01 00：00：00

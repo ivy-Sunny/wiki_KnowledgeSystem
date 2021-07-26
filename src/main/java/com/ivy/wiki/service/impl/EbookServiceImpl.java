@@ -37,10 +37,10 @@ public class EbookServiceImpl implements EbookService {
     @Override
     public ResultVo addEbook(Ebook ebook) {
         int result = ebookMapper.insertEbook(ebook);
-        if (result == 1){
-            return new ResultVo(200,"添加电子书成功");
-        }else{
-            return new ResultVo(400,"添加失败");
+        if (result == 1) {
+            return new ResultVo(200, "添加电子书成功");
+        } else {
+            return new ResultVo(400, "添加失败");
         }
     }
 
@@ -48,20 +48,26 @@ public class EbookServiceImpl implements EbookService {
     public ResultVo deleteEbook(Ebook ebook) {
         Long id = ebook.getId();
         int result = ebookMapper.deleteEbook(id);
-        if (result == 1){
-            return new ResultVo(200,"删除电子书成功");
-        }else{
-            return new ResultVo(400,"删除失败");
+        if (result == 1) {
+            return new ResultVo(200, "删除电子书成功");
+        } else {
+            return new ResultVo(400, "删除失败");
         }
     }
 
     @Override
     public ResultVo updateEbook(Ebook ebook) {
         int result = ebookMapper.updateEbook(ebook);
-        if (result == 1){
-            return new ResultVo(200,"删除电子书成功");
-        }else{
-            return new ResultVo(400,"删除失败");
+        if (result == 1) {
+            return new ResultVo(200, "删除电子书成功");
+        } else {
+            return new ResultVo(400, "删除失败");
         }
+    }
+
+    @Override
+    public ResultVo findEbookByCategory(String categoryId) {
+        System.err.println(categoryId);
+        return new ResultVo(ebookMapper.listByCategory(categoryId));
     }
 }

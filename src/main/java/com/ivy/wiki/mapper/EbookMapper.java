@@ -27,8 +27,9 @@ public interface EbookMapper {
 
     /**
      * 添加电子书
-     * @return
+     *
      * @param ebook
+     * @return
      */
     @Insert("INSERT INTO ebook(name, category1_id, category2_id, description, cover) " +
             "VALUES(#{name}, #{category1Id}, #{category2Id}, #{description}, #{cover})")
@@ -36,6 +37,7 @@ public interface EbookMapper {
 
     /**
      * 删除电子书
+     *
      * @param id
      * @return
      */
@@ -44,6 +46,7 @@ public interface EbookMapper {
 
     /**
      * 更新电子书
+     *
      * @param ebook
      * @return
      */
@@ -51,4 +54,11 @@ public interface EbookMapper {
             "category2_id=#{category2Id}, description=#{description}, cover=#{cover}" +
             "WHERE id = #{id}")
     public int updateEbook(Ebook ebook);
+
+    /**
+     * 根据分类查询电子书
+     * @param categoryId
+     * @return
+     */
+    public List<Ebook> listByCategory(String categoryId);
 }

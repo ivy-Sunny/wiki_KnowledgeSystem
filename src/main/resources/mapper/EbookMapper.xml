@@ -30,4 +30,18 @@
             </choose>
         </where>
     </select>
+
+    <select id="listByCategory" resultType="Ebook">
+        SELECT * FROM ebook
+        <where>
+            <choose>
+                <when test="categoryId =='' || category == null">
+
+                </when>
+                <otherwise>
+                    category2_id = #{categoryId}
+                </otherwise>
+            </choose>
+        </where>
+    </select>
 </mapper>
