@@ -25,7 +25,7 @@ public class CategoryController {
     }
 
     @GetMapping("query")
-    public ResultVo findAllCategory() {
-        return new ResultVo(categoryService.findAllCategory());
+    public ResultVo findAllCategory(String name) {
+        return new ResultVo(categoryService.findAllCategory(name));
     }
 }

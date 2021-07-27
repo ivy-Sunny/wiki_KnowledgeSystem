@@ -18,5 +18,5 @@ public interface CategoryService {
      *  查询所有Category
      * @return
      */
-    public ResultVo findAllCategory();
+    public ResultVo findAllCategory(String name);
 }

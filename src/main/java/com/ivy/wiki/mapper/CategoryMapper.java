@@ -20,5 +20,5 @@ public interface CategoryMapper {
      * 查询所有Category
      * @return
      */
-    public List<Category> finAllCategory();
+    public List<Category> finAllCategory(String name);
 }

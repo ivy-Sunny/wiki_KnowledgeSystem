@@ -28,8 +28,8 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public ResultVo findAllCategory() {
-        return new ResultVo(categoryMapper.finAllCategory());
+    public ResultVo findAllCategory(String name) {
+        return new ResultVo(categoryMapper.finAllCategory(name));
     }
 
 
