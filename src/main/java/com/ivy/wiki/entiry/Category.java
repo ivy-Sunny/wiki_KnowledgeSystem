@@ -14,6 +14,7 @@ import java.util.List;
 public class Category {
     private String id;
     private Integer parent;
+    private String parentName;
     private String name;
     private Integer sort;
     private List<Category> children;

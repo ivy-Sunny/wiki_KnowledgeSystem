@@ -23,7 +23,14 @@ public class CategoryServiceImpl implements CategoryService {
     private CategoryMapper categoryMapper;
 
     @Override
-    public ResultVo findAllCategory() {
-        return new ResultVo(categoryMapper.findAllCategory());
+    public ResultVo findCategoryNodes() {
+        return new ResultVo(categoryMapper.findCategoryNodes());
     }
+
+    @Override
+    public ResultVo findAllCategory() {
+        return new ResultVo(categoryMapper.finAllCategory());
+    }
+
+
 }

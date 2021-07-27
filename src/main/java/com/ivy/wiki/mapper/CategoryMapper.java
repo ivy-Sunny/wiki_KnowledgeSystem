@@ -11,8 +11,14 @@ import java.util.List;
 @Mapper
 public interface CategoryMapper {
     /**
+     * 查询CategoryNodes节点树
+     * @return
+     */
+    public List<Category> findCategoryNodes();
+
+    /**
      * 查询所有Category
      * @return
      */
-    public List<Category> findAllCategory();
+    public List<Category> finAllCategory();
 }

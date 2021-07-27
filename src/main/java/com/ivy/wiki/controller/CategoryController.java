@@ -19,9 +19,13 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
 
-    @GetMapping("/query")
-    public ResultVo findCategory() {
+    @GetMapping("/nodes")
+    public ResultVo findCategoryNodes() {
+        return new ResultVo<>(categoryService.findCategoryNodes());
+    }
 
-        return new ResultVo<>(categoryService.findAllCategory());
+    @GetMapping("query")
+    public ResultVo findAllCategory() {
+        return new ResultVo(categoryService.findAllCategory());
     }
 }

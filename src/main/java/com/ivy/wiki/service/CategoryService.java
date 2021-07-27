@@ -9,7 +9,13 @@ import org.springframework.stereotype.Service;
 @Service
 public interface CategoryService {
     /**
-     * 查询所有Category
+     * 查询Category节点树
+     * @return
+     */
+    public ResultVo findCategoryNodes();
+
+    /**
+     *  查询所有Category
      * @return
      */
     public ResultVo findAllCategory();
